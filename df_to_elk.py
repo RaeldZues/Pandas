@@ -61,7 +61,7 @@ if __name__ == '__main__':
     es = elasticsearch.Elasticsearch(<enter your ip here>, timeout=100000)
     with concurrent.futures.ProcessPoolExecutor(max_workers=8) as proc:
         try:
-            proc.map(read_bro, path)
+            proc.map(read_bro, str(path))
         except Exception as e:
             print(e)
             pass
